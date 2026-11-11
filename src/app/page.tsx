@@ -22,8 +22,8 @@ import {
 const WHATSAPP_URL =
   "https://wa.me/5511970584040?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20equipe%20da%20Recupere%20Consulting.";
 
-// TODO: substituir pelo CNPJ real da empresa
-const CNPJ = "00.000.000/0001-00";
+
+const CNPJ = "66.347.256/0001-88";
 
 const ACCENT = "bg-[#3dd6ff] hover:bg-[#6ee3ff] text-[#06214d]";
 
@@ -356,30 +356,104 @@ export default function Home() {
       </section>
 
       {/* ================= FOOTER ================= */}
-      <footer className="bg-[#061a45] text-white/60 py-8 text-xs">
-        <div className="max-w-[1200px] mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-center sm:text-left space-y-1">
-            <p>
-              © {new Date().getFullYear()} Recupere Consulting — Revisão Tributária e Recuperação
-              de Créditos.
-            </p>
-            <p>CNPJ {CNPJ}</p>
+      <footer
+        className="relative overflow-hidden bg-[#061a45] text-white/70"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px), radial-gradient(700px 300px at 10% 0%, rgba(31,107,255,0.45) 0%, rgba(6,26,69,0) 70%)",
+          backgroundSize: "72px 72px, 72px 72px, 100% 100%",
+        }}
+      >
+        <div className="h-1 bg-gradient-to-r from-[#1f6bff] via-[#3dd6ff] to-[#1f6bff]" />
+
+        <div className="relative max-w-[1200px] mx-auto px-5 sm:px-8 pt-14 pb-8">
+          <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+            {/* Marca */}
+            <div>
+              <div className="flex items-center gap-2.5">
+                <span className="w-10 h-10 rounded-xl bg-[#3dd6ff] text-[#06214d] grid place-items-center font-black text-xl">
+                  R
+                </span>
+                <span className="text-xl font-bold tracking-tight text-white">
+                  Recupere<span className="text-[#3dd6ff]">.</span>
+                </span>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed max-w-sm">
+                Revisão tributária e recuperação de créditos, com análise técnica, transparência e
+                foco na conformidade fiscal.
+              </p>
+              <div className="mt-5 inline-flex items-center gap-3 rounded-2xl bg-white/5 border border-white/10 px-4 py-3">
+                <span className="w-9 h-9 rounded-lg bg-white/10 text-[#3dd6ff] grid place-items-center">
+                  <ShieldCheck className="w-5 h-5" />
+                </span>
+                <div className="leading-tight">
+                  <p className="text-sm font-semibold text-white">FM Consulting</p>
+                  <p className="text-xs text-white/60">Gestão Empresarial</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Navegação */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#3dd6ff]">
+                Navegação
+              </h4>
+              <ul className="mt-4 space-y-2.5 text-sm">
+                <li><Link href="#solucoes" className="hover:text-white transition-colors">Soluções</Link></li>
+                <li><Link href="#segmentos" className="hover:text-white transition-colors">Segmentos</Link></li>
+                <li><Link href="#como-funciona" className="hover:text-white transition-colors">Como funciona</Link></li>
+                <li><Link href="#contato" className="hover:text-white transition-colors">Contato</Link></li>
+              </ul>
+            </div>
+
+            {/* Contato */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-widest text-[#3dd6ff]">
+                Contato
+              </h4>
+              <ul className="mt-4 space-y-3 text-sm">
+                <li>
+                  <a href="tel:5511970584040" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                    <Phone className="w-4 h-4 text-[#3dd6ff]" /> +55 11 97058-4040
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:fabio.souza@grupovillela.com" className="inline-flex items-center gap-2 hover:text-white transition-colors break-all">
+                    <Mail className="w-4 h-4 text-[#3dd6ff] shrink-0" /> fabio.souza@grupovillela.com
+                  </a>
+                </li>
+                <li className="inline-flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-[#3dd6ff]" /> São Paulo, com expansão nacional
+                </li>
+              </ul>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`mt-5 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold transition-all active:scale-95 ${ACCENT}`}
+              >
+                <MessageCircle className="w-4 h-4" /> WhatsApp
+              </a>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
+
+          {/* Linha legal */}
+          <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+            <div className="text-center md:text-left space-y-1">
+              <p>
+                © {new Date().getFullYear()} Recupere Consulting · Todos os direitos reservados.
+              </p>
+              <p className="text-white/50">
+                <span className="font-semibold text-white/70">FM Consulting Gestão Empresarial</span>{" "}
+                · CNPJ {CNPJ}
+              </p>
+            </div>
             <Link
               href="/politica-de-privacidade"
-              className="px-4 py-2 rounded-full border border-white/25 text-white/90 font-semibold hover:bg-white/10 hover:text-white transition-colors"
+              className="px-5 py-2.5 rounded-full border border-white/25 text-white/90 font-semibold hover:bg-white/10 hover:text-white transition-colors"
             >
               Política de Privacidade
             </Link>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
-            >
-              Fale com nossa equipe
-            </a>
           </div>
         </div>
       </footer>

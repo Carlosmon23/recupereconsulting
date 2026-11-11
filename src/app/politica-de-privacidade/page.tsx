@@ -8,15 +8,15 @@ export const metadata: Metadata = {
     "Política de Privacidade da Recupere Consulting, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).",
 };
 
-// TODO: substituir pelos dados reais da empresa
-const CNPJ = "00.000.000/0001-00";
+
+const CNPJ = "66.347.256/0001-88";
 const EMAIL = "fabio.souza@grupovillela.com";
 
 const sections = [
   {
     t: "1. Quem somos (Controlador)",
     p: [
-      `A Recupere Consulting, inscrita no CNPJ sob o nº ${CNPJ}, é a controladora dos dados pessoais tratados por meio deste site, nos termos da Lei nº 13.709/2018 (Lei Geral de Proteção de Dados – LGPD).`,
+      `A FM Consulting Gestão Empresarial (Recupere Consulting), inscrita no CNPJ sob o nº ${CNPJ}, é a controladora dos dados pessoais tratados por meio deste site, nos termos da Lei nº 13.709/2018 (Lei Geral de Proteção de Dados – LGPD).`,
     ],
   },
   {
@@ -122,7 +122,7 @@ export default function PoliticaDePrivacidade() {
 
       <footer className="bg-[#061a45] text-white/60 py-8 text-xs">
         <div className="max-w-[900px] mx-auto px-5 sm:px-8 text-center">
-          © {new Date().getFullYear()} Recupere Consulting · CNPJ {CNPJ}
+          © {new Date().getFullYear()} Recupere Consulting · FM Consulting Gestão Empresarial · CNPJ {CNPJ}
         </div>
       </footer>
     </div>
